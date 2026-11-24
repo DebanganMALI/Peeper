@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: MIT
+[package]
+name = "peeper-measure"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Peeper L6 measurement: entropy metrics, guesswork, and cost-to-crack."
+
+[lints]
+workspace = true
+
+[dependencies]
+peeper-core.workspace = true

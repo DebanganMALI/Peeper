@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: MIT
+[package]
+name = "peeper-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Peeper L1/L2 core: the Target oracle and per-target cost model."
+
+[lints]
+workspace = true
+
+[dependencies]

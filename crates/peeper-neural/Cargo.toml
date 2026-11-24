@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: MIT
+[package]
+name = "peeper-neural"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Peeper L3 neural generators (Burn/Candle) and the bandit meta-scheduler."
+
+[lints]
+workspace = true
+
+[dependencies]

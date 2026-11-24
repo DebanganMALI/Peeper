@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: MIT
+[package]
+name = "peeper-verify"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Peeper L2 verifiers: hash/KDF oracles and the Obscura AEAD-tag oracle."
+
+[lints]
+workspace = true
+
+[dependencies]
+peeper-core.workspace = true

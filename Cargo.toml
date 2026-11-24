@@ -1,0 +1,56 @@
+# Peeper workspace manifest
+# Shared dependency versions, package metadata, and lint policy live here.
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/peeper-core",
+    "crates/peeper-verify",
+    "crates/peeper-generate",
+    "crates/peeper-neural",
+    "crates/peeper-gpu",
+    "crates/peeper-orchestrate",
+    "crates/peeper-measure",
+    "crates/peeper-proto",
+    "crates/peeper-cli",
+    "crates/peeper-gui",
+    "xtask",
+]
+
+[workspace.package]
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.97"
+license = "MIT"
+authors = ["Debangan Mali"]
+repository = "https://github.com/DebanganMALI/Peeper"
+description = "A distributed, GPU-accelerated, cost-aware credential-recovery and KDF-strength measurement engine."
+
+# Shared dependency versions. Individual crates opt in with `dep.workspace = true`.
+[workspace.dependencies]
+peeper-core = { path = "crates/peeper-core" }
+peeper-verify = { path = "crates/peeper-verify" }
+peeper-generate = { path = "crates/peeper-generate" }
+peeper-neural = { path = "crates/peeper-neural" }
+peeper-gpu = { path = "crates/peeper-gpu" }
+peeper-orchestrate = { path = "crates/peeper-orchestrate" }
+peeper-measure = { path = "crates/peeper-measure" }
+peeper-proto = { path = "crates/peeper-proto" }
+clap = { version = "4", features = ["derive"] }
+
+# Lint policy (ADR: clippy pedantic, warnings denied in CI).
+# Crates inherit this with `[lints] workspace = true`.
+# `deny` not `forbid`: Phase 0 is unsafe-free, but the GPU/FFI layers will later
+# need audited `unsafe` blocks that opt out locally with a documented reason.
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+# Domain vocabulary (CubeCL, Argon2id, AEAD, NTLM, ...) is not markdown to fix.
+doc_markdown = "allow"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

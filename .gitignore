@@ -1,0 +1,21 @@
+# Rust build artifacts
+/target
+**/*.rs.bk
+
+# Local env / secrets — never commit real credentials, vaults, or hash lists
+.env
+*.local
+/local/
+/corpora/
+/vaults/
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Tauri (GUI) build output, added when the GUI phase begins
+crates/peeper-gui/target/
+crates/peeper-gui/dist/

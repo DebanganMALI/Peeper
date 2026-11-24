@@ -1,0 +1,6 @@
+# Pinned toolchain. Bump deliberately, commit the change on its own.
+# If your installed stable is newer, rustup fetches this version on first build.
+[toolchain]
+channel = "1.97.0"
+components = ["rustfmt", "clippy"]
+profile = "default"

@@ -1,0 +1,2 @@
+# Clippy tuning. Lint levels themselves live in the workspace manifest.
+avoid-breaking-exported-api = false

@@ -1,0 +1,11 @@
+# Normalize line endings to LF in the repo and in working copies on every OS.
+# rustfmt is configured for Unix newlines, so this keeps the CI fmt check green
+# on the Windows runner too.
+* text=auto eol=lf
+
+# Binary assets added later should not be line-ending normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.pdf binary
